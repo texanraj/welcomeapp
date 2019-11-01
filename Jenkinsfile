@@ -39,11 +39,13 @@ pipeline {
             steps {
 //                input 'Deploy to Production?'
 //                milestone(1)
+                script {
                 kubernetesDeploy(
-//                    kubeconfigId: 'kubeconfig',
+                    kubeconfigId: 'kubeconfig',
                     configs: 'welcomeapp.yaml',
                     enableConfigSubstitution: true
                 )
+              }
             }
         }
     }
