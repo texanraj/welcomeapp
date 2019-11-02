@@ -4,7 +4,6 @@ COPY . /go/src/welcomeapp
 RUN cd /go/src/welcomeapp && go build .
 #go build command creates a linux binary that can run without any go tooling.
 USER root
-RUN usermod -aG docker jenkins
 
 FROM alpine
 #Alpine is one of the lightest linux containers out there, only a few MB
