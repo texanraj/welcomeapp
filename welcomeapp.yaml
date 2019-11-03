@@ -3,13 +3,12 @@ apiVersion: v1
 metadata:
   name: welcomeapp-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: welcomeapp
   ports:
   - protocol: TCP
     port: 8080
-    type: LoadBalancer
 
 ---
 
