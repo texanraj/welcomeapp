@@ -32,14 +32,10 @@ pipeline {
         stage('Scan Docker Image Using Aqua') {
             when {
                 branch 'master'
-            }
-            steps {
-                script {
-                        aqua customFlags: '', hideBase: false, hostedImage: DOCKER_IMAGE_NAME, localImage: '', locationType: 'hosted', notCompliesCmd: '', onDisallowed: 'ignore', policies: '', register: false, registry: '', showNegligible: true
-                    }
-                }
-            }
-        }       
+            }    
+              aqua customFlags: '', hideBase: false, hostedImage: DOCKER_IMAGE_NAME, localImage: '', locationType: 'hosted', notCompliesCmd: '', onDisallowed: 'ignore', policies: '', register: false, registry: '', showNegligible: true
+        }    
+        
         stage('DeployToProduction') {
             when {
                 branch 'master'
