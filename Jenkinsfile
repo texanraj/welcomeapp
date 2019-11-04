@@ -33,8 +33,12 @@ pipeline {
             when {
                 branch 'master'
             }    
+            steps {
+                script {            
               aqua customFlags: '', hideBase: false, hostedImage: DOCKER_IMAGE_NAME, localImage: '', locationType: 'hosted', notCompliesCmd: '', onDisallowed: 'ignore', policies: '', register: false, registry: '', showNegligible: true
-        }    
+                    }
+            }
+        }
         
         stage('DeployToProduction') {
             when {
