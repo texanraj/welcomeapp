@@ -35,7 +35,7 @@ pipeline {
             }    
             steps {
                 script {            
-              aqua customFlags: '', hideBase: false, hostedImage: DOCKER_IMAGE_NAME, localImage: '', locationType: 'hosted', notCompliesCmd: '', onDisallowed: 'ignore', policies: '', register: false, registry: '', showNegligible: true
+              aqua customFlags: '', hideBase: false, hostedImage: DOCKER_IMAGE_NAME:BUILD_NUMBER, localImage: '', locationType: 'hosted', notCompliesCmd: '', onDisallowed: 'ignore', policies: '', register: false, registry: 'Docker Hub', showNegligible: true
                     }
             }
         }
